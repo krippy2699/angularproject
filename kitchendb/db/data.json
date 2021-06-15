@@ -1,0 +1,55 @@
+{
+        "kitchen"  : [
+            {
+                "id" : 1,
+                "Name" : "Dominoz",
+                "Email" : "dominoz99@gmail.com",
+                "Password" : "password123!",
+                "MenuItem1" : "Pizza",
+                "Item1Price" : 8,
+                "MenuItem2" : "BreadSticks",
+                "Item2Price" : 4,
+                "MenuItem3" : "Pasta",
+                "Item3Price" : 9,
+                "MenuItem4" : "Garlic Bread",
+                "Item4Price" : 6,
+                "MenuItem5" : "Calzone",
+                "Item5Price" : 7,
+                "Pic" : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1024px-Domino%27s_pizza_logo.svg.png"
+            },
+            {
+                "id" : 2,
+                "Name" : "McDonalds",
+                "Email" : "mickeyds1432@hotmail.com",
+                "Password" : "hunter1234!",
+                "MenuItem1" : "McChicken",
+                "Item1Price" : 2,
+                "MenuItem2" : "McNuggets",
+                "Item2Price" : 6,
+                "MenuItem3" : "McFlurry",
+                "Item3Price" : 5,
+                "MenuItem4" : "Spicy Crispy Chicken",
+                "Item4Price" : 4,
+                "MenuItem5" : "Spicy McNuggets",
+                "Item5Price" : 4,
+                "Pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/273px-McDonald%27s_Golden_Arches.svg.png"
+            },
+            {
+                "id":3,
+                "Name" : "Nobu",
+                "Email" : "kingwasabi@gmail1212.com",
+                "Password" : "nobupassword123!",
+                "MenuItem1" : "Shrimp Tempura",
+                "Item1Price" : 15,
+                "MenuItem2" : "Calamari",
+                "Item2Price" : 20,
+                "MenuItem3" : "Ceviche",
+                "Item3Price" : 40,
+                "MenuItem4" : "Seaweed",
+                "Item4Price" : 6,
+                "MenuItem5" : "Rice Cakes",
+                "Item5Price" : 8,
+                "Pic" : "https://iconape.com/wp-content/png_logo_vector/nobu-restaurants.png"
+            }
+        ]
+}

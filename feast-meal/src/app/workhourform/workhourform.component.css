@@ -1,0 +1,35 @@
+body.workhoursbody
+{
+    text-align: center;
+}
+
+form.workhoursform
+{
+    text-align:center;
+    padding: 50px;
+    color: slateblue;
+}
+
+
+div.workhourdiv
+{
+    width:500px;
+    text-align: center;
+    margin-left: 450px;
+}
+
+input[type=checkbox]
+{
+    display: block;
+}
+
+.getimgdiv,.workhoursdiv,.checkboxes
+{   
+    border:5px solid #000;
+    padding:10px;
+}
+
+button
+{
+    margin:10px;
+}

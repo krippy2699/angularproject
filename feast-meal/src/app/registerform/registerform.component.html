@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Registration</title>
+</head>
+
+<body class="regform1body">
+    
+    <h2>FEASTFREEDOM WELCOMES YOU !</h2>
+    
+    <h3>REGISTER HERE </h3>
+    
+    <div class="regform1div">
+       
+        <form class="regform1" #providersregform="ngForm" (ngSubmit)="onSubmit(providersregform)">
+            
+            <mat-card>
+                <div ngModelGroup="businessinfo" class="businessinfo">
+                    
+                    <div class="form-group">
+                        <label for="Name">Registered Business Name:</label>
+                        <input ngModel name="Name" #Name="ngModel"  [(ngModel)]="kitchmodelobj.Name" class="form-control" type="text" required="required"/>
+                        <div class="alert alert-danger" *ngIf="Name.touched && !Name.valid">Registration requires an official business name !</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restaddy">Address:</label>
+                        <input ngModel name="restaddy" #restaddy="ngModel" class="form-control" type="text" required="required"/>
+                        <div class="alert alert-danger" *ngIf="restaddy.touched && !restaddy.valid">Registration requires a valid address !</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restownername">User Name:</label>
+                        <input ngModel name="restownername" #restownername="ngModel" class="form-control" type="text" required="required"/>
+                        <div class="alert alert-danger" *ngIf="restownername.touched && !restownername.valid">Registration requires a valid name !</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email">Email:</label>                        
+                        <input ngModel name="Email" #Email="ngModel" [(ngModel)]="kitchmodelobj.Email" class="form-control" type="email" required="required" pattern=".+@[a-z]{5,15}.com"/>
+                        <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">Registration requires a valid email account !</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restnumber">Business Number:</label>
+                        <input ngModel name="restnumber" #restnumber="ngModel"  class="form-control" type="text" required="required" minlength="10" pattern="[0-9]{10}"/>
+                        <div class="alert alert-danger" *ngIf="restnumber.touched && !restnumber.valid">Registration requires a number to reach the business !</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restcuisine">Cuisine</label>
+                        <select name="restcuisine" required="required">
+                            <option value="Select one"></option>
+                            <option value="Indian">Indian</option>
+                            <option value="Portugese">Portugese</option>
+                            <option value="American">American Fast Food</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Gourmet">Gourmet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restpass">Password:</label>                         
+                        <input ngModel name="restpass" #restpass="ngModel" [(ngModel)]="kitchmodelobj.Password" class="form-control" type="password" required="required" minlength="10"/>
+                        <div class="alert alert-danger" *ngIf="restpass.touched && !restpass.valid">Registration reuires a password that is 10 characters or more!</div>
+                        <small>
+                            <ul>
+                                <li>Password should be 10 or more characters long</li>
+                                <li>Password should hold a special character</li>
+                                <li>Password should hold a number</li>
+                                <li>Password should hold an UpperCase letter</li> 
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+            
+            </mat-card>
+
+            <mat-card>
+                <div ngModelGroup="menuinfo" class="menuinfo">
+
+                    <h3>Tell Us About Your Menu !</h3>
+
+                    <div class="menuitem1">
+                        <div class="form-group">
+                            <label for="MenuItem1">Dish Name:</label>          
+                            <input class="form-control" size="20" [(ngModel)]="kitchmodelobj.MenuItem1" name="MenuItem1" type="text" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Item1Price">Price:$ </label>           
+                            <input class="form-control" size="20" [(ngModel)]="kitchmodelobj.Item1Price" name="Item1Price" type="text" required="required">
+                        </div>
+                    </div>
+
+                    <div class="menuitem2">
+                        <div class="form-group">
+                            <label for="MenuItem2 ">Dish Name:</label>
+                            <input class="form-control" size="20" [(ngModel)]="kitchmodelobj.MenuItem2" name="MenuItem2 " type="text" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Item2Price">Price:$ </label>
+                            <input class="form-control" size="20" [(ngModel)]="kitchmodelobj.Item2Price" minlength="10" name="Item2Price" type="text" >
+                        </div>
+                    </div>
+
+                    <div class="menuitem3">
+                        <div class="form-group">
+                            <label for="MenuItem3">Dish Name:</label>
+                            <input class="form-control" [(ngModel)]="kitchmodelobj.MenuItem3" name="MenuItem3" type="text" >
+                        </div>
+                        <div class="form-group">
+                            <label for="Item3Price">Price:$ </label>
+                            <input class="form-control" minlength="10" [(ngModel)]="kitchmodelobj.Item3Price" name="Item3Price" type="text" >
+                        </div>
+                    </div>
+
+                    <div class="menuitem4">
+                        <div class="form-group">
+                            <label for="MenuItem4">Dish Name:</label>
+                            <input class="form-control" [(ngModel)]="kitchmodelobj.MenuItem4" name="MenuItem4" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="Item4Price">Price:$ </label>
+                            <input class="form-control" minlength="10" [(ngModel)]="kitchmodelobj.Item4Price" name="Item4Price" type="text" >
+                        </div>
+                    </div>
+
+                    <div class="menuitem5">
+                        <div class="form-group">
+                            <label for="MenuItem5">Dish Name:</label>
+                            <input class="form-control" [(ngModel)]="kitchmodelobj.MenuItem5" name="MenuItem5" type="text" >
+                        </div>
+                        <div class="form-group">
+                            <label for="Item5Price">Price:$ </label>
+                            <input class="form-control" minlength="10" [(ngModel)]="kitchmodelobj.Item5Price" name="Item5Price" type="text">
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card>
+                <div ngModelGroup="businesspic" class="businesspic">
+                    <div class="getimgdiv">
+                        <h2>Image</h2>
+                        <label for="restimg">Upload Image: </label>
+                        <br />
+                        <input class="form-group" ngModel type="file" id="img" required="required" name="restimg" #restimg="ngModel" accept="image/*">
+                        <div class="alert alert-danger" *ngIf="restimg.touched && !restimg.valid">Registration requires user to upload a unique profile business picture !</div>
+                        <br />
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card>
+                <div ngModelGroup="buttons">
+                    <button class="btn btn-info" type="submit" (click)="datasaved()">Save</button>
+                    <button  routerLink="/workhour"  class="btn btn-info" [disabled]="!saved">Next</button>
+                    <button routerLink="" type="button" class="btn btn-info">Cancel</button>
+                </div>
+            </mat-card>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

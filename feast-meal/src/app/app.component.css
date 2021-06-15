@@ -1,0 +1,16 @@
+.spacer{
+    flex: 2 7 auto;
+}
+.home{
+    color: white;
+}
+.word {
+    color: yellowgreen;
+}
+.center {
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  
