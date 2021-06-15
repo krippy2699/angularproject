@@ -1,0 +1,25 @@
+<p>
+    <mat-toolbar color="primary">
+      <a routerLink="/home" class="home">FeastFreedom.com</a>
+      <span class="spacer"></span>
+      <a routerLink="/addtocart"><mat-icon aria-hidden="false" aria-label="Example home icon" class="home">add_shopping_cart</mat-icon></a>
+      &nbsp;
+      &nbsp;
+      <p>
+      <a routerLink="/register" class="word">Provider Register Now</a>
+      </p>
+      &nbsp;
+      &nbsp;
+      
+     <button mat-button [matMenuTriggerFor]="menu" class="word"><mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon></button>
+     <mat-menu #menu="matMenu">
+      <a routerLink="/login" class="word">Login</a><br>
+      <a routerLink="" (click)="logout()" class="word">Logout</a><br>
+    </mat-menu>
+    
+    </mat-toolbar>
+  </p>
+  
+<router-outlet></router-outlet>
+
+  

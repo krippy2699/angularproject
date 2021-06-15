@@ -1,0 +1,28 @@
+<body class = "regform1body">
+
+
+<div *ngIf ="kitchendata" class="regform1div">
+    <h1>The menu of {{kitchendata.Name}}</h1>
+    <div class = "form-group">
+    <p> 
+        <input type="checkbox" id="dish1" name="dish1" unchecked>
+        <label for="dish1"> {{kitchendata.MenuItem1}}      {{kitchendata.Item1Price | currency:'$'}} </label>
+    </p>
+    <p> 
+        <input type="checkbox" id="dish1" name="dish1" unchecked>
+        <label for="dish1"> {{kitchendata.MenuItem2}}      {{kitchendata.Item2Price | currency:'$'}} </label>
+    </p>
+    <p> 
+        <input type="checkbox" id="dish1" name="dish1" unchecked>
+        <label for="dish1"> {{kitchendata.MenuItem3}}      {{kitchendata.Item3Price | currency:'$'}} </label>
+    </p>
+<!-- Just coppy and patse the top line of code for 4th and 5th dishes -->
+
+   
+    <button >Add to Cart</button>
+    </div>
+    
+
+</div>
+<button routerLink="/home">Back to Page</button> 
+</body>

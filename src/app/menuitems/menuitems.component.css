@@ -1,0 +1,27 @@
+body.menuitembody
+{
+    text-align:center;
+}
+
+form.menuitemform
+{
+    text-align:center;
+    margin-left:400px;
+    margin-right:400px;
+}
+
+.menuitem1,.menuitem2,.menuitem3
+{
+    border:5px solid black;
+    text-align: center;
+}
+
+input[type=text]
+{
+    width:300px;
+    margin-left: 370px;
+} 
+button
+{
+    margin:10px;
+}

@@ -1,0 +1,23 @@
+body.regform1body
+{
+    text-align:center;
+}
+
+div.regform1div
+{
+    width:500px;
+    text-align: center;
+    margin-left: 450px;
+    border:5px solid #000;
+}
+
+form.regform1
+{
+    text-align:center;
+    padding: 50px;
+    color: slateblue;
+}
+button
+{
+    margin:10px;
+}

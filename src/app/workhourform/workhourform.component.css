@@ -1,0 +1,59 @@
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+  button{
+    margin: 5px;
+} 
+
+/* 
+css for the work hours page */
+
+body.workhoursbody
+{
+    text-align: center;
+}
+form.workhoursform
+{
+    text-align : center;
+    align-items: center;
+}
+
+div.workdaysdiv
+{
+    border: 5px solid #000;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+div.workhoursdiv
+{
+    border: 5px solid #000;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 20px;
+}
+
+div.getimgdiv
+{
+    border: 5px solid #000;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 20px;
+}
+/* 
+styling for the menu items */
+form.menuitemform
+{
+    /* border: 5px solid #000; */
+
+    text-align: center;
+    margin-right:400px;
+    margin-left:400px;
+}
+button
+{
+    margin:10px;
+}
+

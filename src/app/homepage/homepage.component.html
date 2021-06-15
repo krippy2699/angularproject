@@ -1,0 +1,10 @@
+ <h1>There are available restaurants: </h1>
+ <div>
+<div *ngFor="let kit of kitchendata" style="width:80%" > 
+  <button (click)="Pickid(kit)"> 
+    <img src="{{kit.Pic}}" width= "100px">
+  </button>
+  <h2>{{kit.Name}}</h2>
+</div>
+</div>
+
