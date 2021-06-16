@@ -23,6 +23,8 @@ import { ThankyouuserComponent } from './thankyouuser/thankyouuser.component';
 import { CanactiveguardGuard } from './service/canactiveguard.guard';
 import { AuthorizeService } from './service/authorize.service';
 import { KitchenserviceService } from './service/kitchenservice.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AccountService } from './service/account.service';
 
 @NgModule({
   declarations: [
@@ -49,8 +51,10 @@ import { KitchenserviceService } from './service/kitchenservice.service';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
+    BehaviorSubject,
+    Observable
   ],
-  providers: [KitchenserviceService],
+  providers: [KitchenserviceService,AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -38,23 +38,6 @@
       "MenuItem3": "Ceviche",
       "Item3Price": 40,
       "Pic": "https://iconape.com/wp-content/png_logo_vector/nobu-restaurants.png"
-    },
-    {
-      "id": 4,
-      "Name": "Pizza Hut",
-      "Email": "krishshah999@gmail.com",
-      "Password": "Ahmedabad!",
-      "MenuItem1": "Fries",
-      "Item1Price": "20",
-      "MenuItem2": "Pizza",
-      "Item2Price": "30",
-      "MenuItem3": "Bread",
-      "Item3Price": "12",
-      "MenuItem4": "Chicago Slice",
-      "Item4Price": "12",
-      "MenuItem5": "Garlic Bread",
-      "Item5Price": "14",
-      "Pic": ""
     }
   ]
 }

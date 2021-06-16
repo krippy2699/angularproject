@@ -1,4 +1,28 @@
-.center {
-  display: flex;
-  justify-content: center;
+div.insertingimg
+{
+  background-image: url('/assets/picture/loginlogo.jpeg');
+  height:905px;
+  margin-right:40px;
+  margin-left:40px;
+
+}
+
+h1.center
+{
+  text-align: center;
+  font-family: 'fantasy';
+}
+
+form.loginform
+{
+  font-weight: bold;
+  width:300px;
+  text-align: center;
+  height:300px;
+  padding:20px;
+  background-color: aliceblue;
+  margin-top: 10px;
+  margin-left:530px;
+  border:1px double #000;
+  border-radius:5%;
 }

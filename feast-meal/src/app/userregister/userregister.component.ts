@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { last } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { AccountService } from '../service/account.service';
+
+
 
 @Component({
   selector: 'app-userregister',
@@ -7,34 +13,52 @@ import { last } from 'rxjs/operators';
   styleUrls: ['./userregister.component.css']
 })
 export class UserregisterComponent implements OnInit {
-  restname = " ";
+
+    form: FormGroup;
+    loading = false;
+    submitted = false;
   
-  constructor() { }
+  constructor( private formBuilder: FormBuilder, private route: ActivatedRoute,
+    private router: Router, private AccountService:AccountService) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+  });
   }
 
-  gettingrestname(firstName: any)
+  get f() 
+  { 
+    return this.form.controls;
+  }
+
+  onSubmit() 
   {
-    console.log(firstName);
+      this.submitted = true;
+
+      // reset alerts on submit
+      this.alertService.clear();
+
+      // stop here if form is invalid
+      if (this.form.invalid) {
+          return;
   }
 
-  gettinglastName(lastName:any)
-  {
-    console.log(lastName);
+      this.loading = true;
+      this.AccountService.register(this.form.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.alertService.success('Registration successful', { keepAfterRouteChange: true });
+                  this.router.navigate(['../login'], { relativeTo: this.route });
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
   }
-
-  gettingemail(Email:any)
-  {
-    console.log(Email);
-  }
-
-  gettinguserpass(userpass:any)
-  {
-    console.log(userpass);
-  }
-
-
-
-
 }
+

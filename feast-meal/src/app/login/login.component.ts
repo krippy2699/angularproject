@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthorizeService } from '../service/authorize.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { AccountService, AlertService } from '../service/account.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,26 +12,66 @@ import { AuthorizeService } from '../service/authorize.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+    loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
 
-invalidCredentialMes: string | undefined;
-username: string | undefined;
-password: string | undefined;
-retUrl: string | null="home";
-  constructor(private authService: AuthorizeService, 
-    private router: Router, 
-    private activatedRoute:ActivatedRoute) { }
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private accountService: AccountService,
+        private alertService: AlertService
+    ) {
+        // redirect to home if already logged in
+        if (this.accountService.userValue) {
+            this.router.navigate(['/']);
+        }
+    }
 
-  ngOnInit():  void{
+
+  
+  
+  ngOnInit(): void {
+    
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+  });
+
+  // get return url from route parameters or default to '/'
+  this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
- onFormSubmit(loginForm: any){
-   this.authService.login(loginForm.value.username, loginForm.value.password).subscribe(data =>{
-     console.log('return to' + this.retUrl);
-     if(this.retUrl!=null){
-       this.router.navigate([this.retUrl]);
-     }else{
-       this.router.navigate(['home'])
-     }
-   });
- }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+
+      // reset alerts on submit
+      this.alertService.clear();
+
+      // stop here if form is invalid
+      if (this.loginForm.invalid) {
+          return;
+      }
+
+      this.loading = true;
+      this.accountService.login(this.f.username.value, this.f.password.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.router.navigate([this.returnUrl]);
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
+  }
+
+ 
 
 }

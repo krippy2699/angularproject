@@ -25,11 +25,11 @@ const routes: Routes = [
   {path: 'userregister', component:UserregisterComponent},
   {path: 'addtocart', component: AddtocartComponent,canActivate:[CanactiveguardGuard]},
   {path:'workhour', component:WorkhourformComponent},// path for the workhour form 
-  {path:'menuitems', component:MenuitemsComponent},
+  {path:'menuitems', component:MenuitemsComponent,canActivate:[CanactiveguardGuard]},
   {path:'login',component:LoginComponent},
   {path: 'thankyouuser',component:ThankyouuserComponent},
   {path:'thankyou',component:ThankyouComponent},
-  {path: 'kitchendata/:id', component:DisplaymenuComponent },
+  {path: 'kitchendata/:id', component:DisplaymenuComponent},
   {path:'**' , component:HomepageComponent}
 
 ];

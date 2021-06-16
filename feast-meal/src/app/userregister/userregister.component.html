@@ -1,26 +1,43 @@
-<h1>New User</h1>
-<div class="regform1body">
-<form #empForm="ngForm" novalidate class="regform1">
-<div>
-    <label>First Name</label>
-    <input ngModel name="firstName"  #firstName="ngModel" (change)="gettingrestname(firstName)" type="text" required minlength="2" class="form-control" >
-    <div class="alert alert-danger" *ngIf=" firstName.touched && !firstName.valid ">Registration requires user to enter a First Name !</div>
-</div>
-<div class="form-group">
-    <label>Last Name</label>
-    <input ngModel name="lastName" #lastName="ngModel" (change)="gettinglastName(lastName)"type="text" required minlength="4" class="form-control" >
-    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid ">Registration requires user to enter a Last Name !</div>
-</div>
-<div class="form-group">
-    <label>Email</label>
-    <input ngModel name="Email" #Email="ngModel" (change)="gettingemail(Email)" type="text" required minlength="2" class="form-control"  >
-    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">Registration requires user to enter an @email !</div>
-</div>
-<div class="form-group">
-    <label for="userpass">Password:</label>
-    <input ngModel name="userpass" #userpass="ngModel" (change)="gettinguserpass(userpass)" class="form-control" type="password" required minlength="10"/>
-    <div class="alert alert-danger" *ngIf="userpass.touched && !userpass.valid"> Registration requires user to enter a strong password !</div>
-</div>
-<button type="button" class="btn btn-info">Submit Form</button>
-</form>
+<div class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+                </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+                <a routerLink="../login" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
